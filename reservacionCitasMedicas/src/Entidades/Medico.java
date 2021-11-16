@@ -1,4 +1,4 @@
-package Entities;
+package Entidades;
 public class Medico extends Persona {
 
   private String Especialidad;

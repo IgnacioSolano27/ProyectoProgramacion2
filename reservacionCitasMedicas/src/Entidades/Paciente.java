@@ -1,4 +1,4 @@
-package Entities;
+package Entidades;
 public class Paciente extends Persona{
 
   private int numeroCita;
