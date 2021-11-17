@@ -128,13 +128,66 @@ public class Cita extends Medico implements Ingresable, Consultable, Reservable,
   }
 
   @Override
-  public void consultarMedicos() {           
-    System.out.println("");
+  public void consultarMedicos() {
+    JOptionPane.showMessageDialog(null, "A continuacion se muestran los especialistas de la clínica:\n"
+                                       +"La clínica cuenta con los siguientes médicos:\n"
+                                       +"-----------------------------------------------------------------------------\n"
+                                       +"Dr."+Med1.getNombre()+" "+Med1.getApellidos()+"\n"
+                                       +"Cédula: "+Med1.getID()+"\n"
+                                       +""+Med1.getGenero()+"\n"
+                                       +"En el area de: "+Med1.getEspecialidad()+"\n"
+                                       +"Contacto: \n"
+                                       +"Teléfono: "+Med1.getTelefono()+"\n"
+                                       +"Correo: "+Med1.getCorreo()+"\n"
+                                       +"-----------------------------------------------------------------------------\n"
+                                       +"Dr."+Med2.getNombre()+" "+Med2.getApellidos()+"\n"
+                                       +"Cédula: "+Med2.getID()+"\n"
+                                       +""+Med2.getGenero()+"\n"
+                                       +"En el area de: "+Med2.getEspecialidad()+"\n"
+                                       +"Contacto: \n"
+                                       +"Teléfono: "+Med2.getTelefono()+"\n"
+                                       +"Correo: "+Med2.getCorreo()+"\n"
+                                       +"-----------------------------------------------------------------------------\n"
+                                       +"Dr."+Med3.getNombre()+" "+Med3.getApellidos()+"\n"
+                                       +"Cédula: "+Med3.getID()+"\n"
+                                       +""+Med3.getGenero()+"\n"
+                                       +"En el area de: "+Med3.getEspecialidad()+"\n"
+                                       +"Contacto: \n"
+                                       +"Teléfono: "+Med3.getTelefono()+"\n"
+                                       +"Correo: "+Med3.getCorreo()+"\n"
+                                       +"-----------------------------------------------------------------------------\n"
+                                       +"Dr."+Med4.getNombre()+" "+Med4.getApellidos()+"\n"
+                                       +"Cédula: "+Med4.getID()+"\n"
+                                       +""+Med4.getGenero()+"\n"
+                                       +"En el area de: "+Med4.getEspecialidad()+"\n"
+                                       +"Contacto: \n"
+                                       +"Teléfono: "+Med4.getTelefono()+"\n"
+                                       +"Correo: "+Med4.getCorreo()+"\n"
+                                       +"-----------------------------------------------------------------------------\n"
+                                        );
   }
 
   @Override
   public void consultarHorarios() {
-    System.out.println("");
+    mensaje = "A continuacion se muestran los horarios de la clínica:\n"
+             +"La clínica cuenta con los siguientes horarios disponibles para las citas medicas:\n"
+             +"-----------------------------------------------------------------------------\n"
+            +"Dias: \n"
+            +"Miércoles\n"
+            +"Viernes\n"
+            +"Sábado\n"
+            +"-----------------------------------------------------------------------------\n"
+            +"Horarios diurnos: \n"
+            +"De 8:00 am a 9:00 am\n"
+            +"De 10:00 am a 11:00 am\n"
+            +"De 11:00 am a 12:00 md\n"
+            +"-----------------------------------------------------------------------------\n"
+            +"Horarios taciturnos\n"
+            +"De 2:00 pm a 3:00 pm\n"
+            +"De 4:00 pm a 5:00 pm\n"
+            +"-----------------------------------------------------------------------------\n"
+    ;
+    JOptionPane.showMessageDialog(null, mensaje);
            
   }
 
