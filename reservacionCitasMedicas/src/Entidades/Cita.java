@@ -193,7 +193,129 @@ public class Cita extends Medico implements Ingresable, Consultable, Reservable,
 
   @Override
   public void reservar() {
-    System.out.println("");        
+
+    if (registrado == true){
+
+      //seleccionar especialidad medica
+      
+      do{
+        opcionMedico = Integer.parseInt(JOptionPane.showInputDialog(null,
+                             "1. Odontología\n"
+                            +"2. Pediatría\n"
+                            +"3. Médico General\n"
+                            +"4. Médico Internista\n"
+                            +"Elige el departamento de tu cita\n",
+                             "Especialidades", 3));
+
+        switch(opcionMedico){
+          case 1: 
+            eleccion = Med1;
+            JOptionPane.showMessageDialog(null,"Has elegido al médico "+eleccion.getNombre()+ " "+eleccion.getApellidos()+", "
+                                              +"de la especialidad "+eleccion.getEspecialidad()+".");
+            break;
+          case 2: 
+            eleccion = Med2;
+            JOptionPane.showMessageDialog(null,"Has elegido al médico "+eleccion.getNombre()+ " "+eleccion.getApellidos()+", "
+                                              +"de la especialidad "+eleccion.getEspecialidad()+".");
+            break;
+          case 3: 
+            eleccion = Med3;
+            JOptionPane.showMessageDialog(null,"Has elegido al médico "+eleccion.getNombre()+ " "+eleccion.getApellidos()+", "
+                                              +"de la especialidad "+eleccion.getEspecialidad()+".");
+            break;
+          case 4:
+            eleccion = Med4;
+            JOptionPane.showMessageDialog(null,"Has elegido al médico "+eleccion.getNombre()+ " "+eleccion.getApellidos()+", "
+                                              +"de la especialidad "+eleccion.getEspecialidad()+".");
+            break;
+          default: 
+            JOptionPane.showMessageDialog(null, "La opcion no esta en el menu reintente", 
+                                                "Error al elegir la especialidad",3);
+        }
+      }while(opcionMedico != 1 & opcionMedico != 2 & opcionMedico != 3 & opcionMedico != 4);
+
+      //Selección de dias
+
+      do{
+        opcionDias = Integer.parseInt(JOptionPane.showInputDialog(null,
+                             "1. Miercoles\n"
+                            +"2. Viernes\n"
+                            +"3. Sábado\n"
+                            +"Elige el dia que deseas agendar tu cita\n",
+                             "Dias disponibles", 3));
+
+        switch(opcionDias){
+          case 1: 
+            diasDisponibles = "Miércoles";
+            break;
+          case 2: 
+            diasDisponibles = "Viernes";
+            break;
+          case 3: 
+            diasDisponibles = "Sábado";
+            break;
+          default: 
+            JOptionPane.showMessageDialog(null,
+             "La opcion no esta en el menu reintente", 
+             "Error al elegir el día",3);
+        }
+      }while(opcionDias != 1 & opcionDias != 2 & opcionDias != 3);
+
+      //Selección de horarios
+
+      do{
+        opcionHorario = Integer.parseInt(JOptionPane.showInputDialog(null,
+                             "1. 8:00 am a 9:00 am\n"
+                            +"2. 10:00 am a 11:00 am\n"
+                            +"3. 11:00 am a 12:00 md\n"
+                            +"4. 2:00 pm a 3:00 pm\n"
+                            +"5. 4:00 pm a 5:00 pm\n"
+                            +"Elige el dia que deseas agendar tu cita\n",
+                             "Horario disponible", 3));
+
+        switch(opcionHorario){
+          case 1: 
+            horasDisponibles = "8:00 am a 9:00 am";
+            break;
+          case 2: 
+            horasDisponibles = "10:00 am a 11:00 am";
+            break;
+          case 3: 
+            horasDisponibles = "11:00 am a 12:00 md";
+            break;
+          case 4:
+            horasDisponibles = "2:00 pm a 3:00 pm";
+            break;
+          case 5:
+            horasDisponibles = "4:00 pm a 5:00 pm";
+            break;
+          default: 
+            JOptionPane.showMessageDialog(null,
+             "La opcion no esta en el menu reintente",
+             "Error en la elección! ", 3);
+        }
+      }while(opcionHorario != 1 & opcionHorario != 2 & opcionHorario != 3 & opcionHorario != 4 & opcionHorario != 5);
+
+      //Se muestra la cita creada
+
+      JOptionPane.showMessageDialog(null,
+                   "--CITA CREADA--\n"
+                  +"El paciente "+cita1.getNombre()+ " "+cita1.getApellidos()+"\n"
+                  +"con cédula: "+cita1.getID()+"\n"
+                  +"Ha reservado una cita con el médico: "+eleccion.getNombre()+" "+eleccion.getApellidos()+"\n"
+                  +"El día : "+diasDisponibles+ " en el horario de "+horasDisponibles+ ". \n"
+                  +"\n"
+                  +"Código del médico = "+eleccion.getCodigoMedico()+"\n"
+                  +"\n"
+                  +"El numero de su cita es: "+cita1.getNumeroCita(),"Cita creada", 3);
+
+      reservado = true;
+
+    }else{
+      JOptionPane.showMessageDialog(null,
+                   "El paciente debe registrarse antes de este proceso",
+                   "Paciente no encontrado", 3);
+    }       
   }
 
   @Override 
