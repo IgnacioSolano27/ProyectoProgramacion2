@@ -17,10 +17,10 @@ public class App extends Cita {
           "1. Registrar nuevo paciente\n"
          +"2. Consultar la disponibilidad de horarios y especialidades\n"
          +"3. Reservar una cita\n"
-         +"4. Mostrar información de la cita creada\n"
+         +"4. Mostrar informacion de la cita creada\n"
          +"5. Cancelar cita\n"
          +"6. Salir\n "
-         +"Seleccione la opción que desea realizar:", "Menú de opciones ", 3 ));
+         +"Seleccione la opcion que desea realizar:", "Men� de opciones ", 3 ));
 
       switch(opcion){
         case 1:

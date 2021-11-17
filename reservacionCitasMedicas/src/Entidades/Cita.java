@@ -25,7 +25,7 @@ public class Cita extends Medico implements Ingresable, Consultable, Reservable,
   public boolean cancelar = false;
   public boolean reservado = false;
  
-  // se crean los medicos de la clinica
+  // se crean los médicos de la clínica
  
   Medico Med1 = new Medico(nomb, ape, ced, ed, gen, tel, corr);
   Medico Med2 = new Medico(nomb, ape, ced, ed, gen, tel, corr);
@@ -36,7 +36,7 @@ public class Cita extends Medico implements Ingresable, Consultable, Reservable,
 
   Paciente cita1 = new Paciente(nomb, ape, ced, ed, gen, tel, corr);
 
-  //creo un objeto de medico que me permitirá seleccionar uno especifico
+  //creo un objeto de médico que me permitirá seleccionar uno específico
 
   Medico eleccion = new Medico(nomb, ape, ced, ed, gen, tel, corr);
     
@@ -45,7 +45,7 @@ public class Cita extends Medico implements Ingresable, Consultable, Reservable,
    //Información de el primer médico
 
     Med1.setNombre("Alberto");
-    Med1.setApellidos("Lopez Herrera");
+    Med1.setApellidos("López Herrera");
     Med1.setID(304220571);
     Med1.setEdad(48);
     Med1.setGenero("Masculino");
@@ -54,7 +54,7 @@ public class Cita extends Medico implements Ingresable, Consultable, Reservable,
     Med1.setCodigoMedico(103);
     Med1.setEspecialidad("Odontólogo");
     
-    //Informacion del segundo medico
+    //Información del segundo médico
     
     Med2.setNombre("Paula");
     Med2.setApellidos("Villareal García");
@@ -66,7 +66,7 @@ public class Cita extends Medico implements Ingresable, Consultable, Reservable,
     Med2.setCodigoMedico(104);
     Med2.setEspecialidad("Pediatra");
  
-    //Informacion del tercer medico
+    //Información del tercer médico
  
     Med3.setNombre("Sharon");
     Med3.setApellidos("Porras Valverde");
@@ -78,7 +78,7 @@ public class Cita extends Medico implements Ingresable, Consultable, Reservable,
     Med3.setCodigoMedico(105);
     Med3.setEspecialidad("Médico General");
     
-    //Informacion del cuatro medico
+    //Información del cuatro médico
     
     Med4.setNombre("Federico");
     Med4.setApellidos("Ramírez Saenz");
@@ -102,13 +102,13 @@ public class Cita extends Medico implements Ingresable, Consultable, Reservable,
       ed = Integer.parseInt(JOptionPane.showInputDialog(null, "Ingrese la edad del paciente:"));
       gen = JOptionPane.showInputDialog(null, "Ingrese género del paciente del paciente:");
       tel = Integer.parseInt(JOptionPane.showInputDialog(null, "Ingrese el teléfono del paciente:"));
-      corr = JOptionPane.showInputDialog(null, "Ingrese el correo electrónico del paciente:");
+      corr = JOptionPane.showInputDialog(null, "Ingrese el correo electronico del paciente:");
 
       //se crea nuevo paciente
       Paciente nuevo = new Paciente(nomb, ape, ced, ed, gen, tel, corr); 
 
       nuevo.setNumeroCita(Integer.parseInt(JOptionPane.showInputDialog(null,
-       "Ingrese un número de cita para asignar al paciente:")));
+       "Ingrese un número de cita para asignar al paciente")));
 
       if (nomb != null){
         registrado = true;
@@ -204,7 +204,7 @@ public class Cita extends Medico implements Ingresable, Consultable, Reservable,
                             +"2. Pediatría\n"
                             +"3. Médico General\n"
                             +"4. Médico Internista\n"
-                            +"Elige el departamento de tu cita\n",
+                            +"Elige el departamento de tu cita:\n",
                              "Especialidades", 3));
 
         switch(opcionMedico){
@@ -238,11 +238,11 @@ public class Cita extends Medico implements Ingresable, Consultable, Reservable,
 
       do{
         opcionDias = Integer.parseInt(JOptionPane.showInputDialog(null,
-                             "1. Miercoles\n"
+                             "1. Miércoles\n"
                             +"2. Viernes\n"
                             +"3. Sábado\n"
                             +"Elige el dia que deseas agendar tu cita:\n",
-                             "Días disponibles", 3));
+                             "Dias disponibles", 3));
 
         switch(opcionDias){
           case 1: 
@@ -270,7 +270,7 @@ public class Cita extends Medico implements Ingresable, Consultable, Reservable,
                             +"3. 11:00 am a 12:00 md\n"
                             +"4. 2:00 pm a 3:00 pm\n"
                             +"5. 4:00 pm a 5:00 pm\n"
-                            +"Elige el dia que deseas agendar tu cita\n",
+                            +"Elige el día que deseas agendar tu cita:\n",
                              "Horario disponible", 3));
 
         switch(opcionHorario){
@@ -348,12 +348,12 @@ public class Cita extends Medico implements Ingresable, Consultable, Reservable,
         JOptionPane.showMessageDialog(null, "Aún no se ha reservado la cita.", "No existe una cita creada", 3);
       }
     }
-  
+        
   }
 
   @Override
   public void cancelar() {
- 
+   
     if(cancelar == true){
 
       JOptionPane.showMessageDialog(null,
@@ -373,7 +373,7 @@ public class Cita extends Medico implements Ingresable, Consultable, Reservable,
                                        +"Teléfono :"+cita1.getTelefono()+"\n"
                                        +"-------------------------------------------------------------------------\n"
                                        +"Información de la cita médica programada\n"
-                                       +"Número de identificacion asignado a la cita: "+cita1.getNumeroCita()+"\n"
+                                       +"Número de identificación asignado a la cita: "+cita1.getNumeroCita()+"\n"
                                        +"Área médica a la que asiste: "+eleccion.getEspecialidad()+"\n"
                                        +"Médico que atiende: "+eleccion.getNombre()+" "+eleccion.getApellidos()+"\n"
                                        +"Código médico: "+eleccion.getCodigoMedico()+ "\n"
@@ -385,7 +385,6 @@ public class Cita extends Medico implements Ingresable, Consultable, Reservable,
         JOptionPane.showMessageDialog(null, "Aún no se ha reservado la cita.", "No existe una cita creada", 3);
       }
     }
-        
   }
 
 }
