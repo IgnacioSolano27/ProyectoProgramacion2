@@ -12,7 +12,7 @@ public class Medico extends Persona {
   public void setCodigoMedico(int codigoMedico){this.CodigoMedico = codigoMedico;}
 
   //Constructor para médico, heredado de persona
-  public Medico(){} //agregar al diagrama
+  public Medico(){} 
 
   public Medico(String nomb, String ape, int ced, int ed, String gen, int tel, String corr){
 

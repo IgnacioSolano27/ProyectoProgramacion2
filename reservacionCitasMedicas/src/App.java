@@ -9,7 +9,7 @@ public class App extends Cita {
 
     Cita cita = new Cita();
 
-    cita.cargarDatos(); //Metodo para cargar datos a los medicos al iniciar el sistema //agregar al diagrama
+    cita.cargarDatos(); //Metodo para cargar datos a los medicos al iniciar el sistema 
 
     do{
 
@@ -20,7 +20,7 @@ public class App extends Cita {
          +"4. Mostrar informacion de la cita creada\n"
          +"5. Cancelar cita\n"
          +"6. Salir\n "
-         +"Seleccione la opcion que desea realizar:", "Men� de opciones ", 3 ));
+         +"Seleccione la opción que desea realizar:", "Menú de opciones ", 3 ));
 
       switch(opcion){
         case 1:

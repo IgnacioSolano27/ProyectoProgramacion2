@@ -313,7 +313,7 @@ public class Cita extends Medico implements Ingresable, Consultable, Reservable,
 
     }else{
       JOptionPane.showMessageDialog(null,
-                   "El paciente debe registrarse antes de este proceso.",
+                   "El paciente debe registrarse antes de este proceso",
                    "Paciente no encontrado", 3);
     }       
   }
