@@ -1,5 +1,7 @@
 package Entidades;
 
+import javax.swing.JOptionPane;
+
 //importar interfaces
 import Interfaces.Cancelable;
 import Interfaces.Consultable;
@@ -92,36 +94,64 @@ public class Cita extends Medico implements Ingresable, Consultable, Reservable,
 
   @Override
   public void registrar() {    
-    // TODO Auto-generated method stub
+    if(nomb == null){
+
+      nomb = JOptionPane.showInputDialog(null, "Ingrese el nombre del paciente");
+      ape = JOptionPane.showInputDialog(null, "Ingrese los apellidos del paciente");
+      ced = Integer.parseInt(JOptionPane.showInputDialog(null, "Ingrese el ID del paciente"));
+      ed = Integer.parseInt(JOptionPane.showInputDialog(null, "Ingrese la edad del paciente"));
+      gen = JOptionPane.showInputDialog(null, "Ingrese genero del paciente del paciente");
+      tel = Integer.parseInt(JOptionPane.showInputDialog(null, "Ingrese el telefono del paciente"));
+      corr = JOptionPane.showInputDialog(null, "Ingrese el correo electronico del paciente");
+
+      //se crea nuevo paciente
+      Paciente nuevo = new Paciente(nomb, ape, ced, ed, gen, tel, corr); 
+
+      nuevo.setNumeroCita(Integer.parseInt(JOptionPane.showInputDialog(null,
+       "Ingrese un numero de cita para asignar al paciente")));
+
+      if (nomb != null){
+        registrado = true;
+      }
+      JOptionPane.showMessageDialog(null, "Se ha registrado el nuevo paciente " +nuevo.getNombre()+ " " +nuevo.getApellidos());
+
+      cita1 = nuevo;
+
+      //En caso de que la cita anterior fue cancelada
+      cancelar = false;
+    
+    }else{
+      JOptionPane.showMessageDialog(null,
+                    "Actualmente ya hay un usuario en trámite, por favor cancele la cita actual antes de ingresar otra.",
+                    "Ya hay un paciente", 3);
+    }
   }
 
   @Override
-  public void consultarMedicos() {
-    // TODO Auto-generated method stub
-        
+  public void consultarMedicos() {           
+    System.out.println("");
   }
 
   @Override
   public void consultarHorarios() {
-   // TODO Auto-generated method stub
-        
+    System.out.println("");
+           
   }
 
   @Override
   public void reservar() {
-  // TODO Auto-generated method stub
-        
+    System.out.println("");        
   }
 
   @Override 
   public void ver() {
-   // TODO Auto-generated method stub
+    System.out.println("");
         
   }
 
   @Override
   public void cancelar() {
-  // TODO Auto-generated method stub
+   System.out.println("");
         
   }
 
