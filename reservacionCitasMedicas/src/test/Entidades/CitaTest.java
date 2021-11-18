@@ -101,4 +101,54 @@ public class CitaTest {
     assertEquals(correoObtenido, correoEsperado);
   }
 
+  @Test
+  public void probarConsultarMedicos(){
+    
+    Medico medPrueba = new Medico();
+
+    medPrueba.setNombre("Sharon");
+    String nombreObtenido = medPrueba.getNombre();
+    String nombreEsperado = "Sharon";
+    assertEquals(nombreEsperado, nombreObtenido);
+
+    medPrueba.setApellidos("Porras Valverde");
+    String apellidoObtenido = medPrueba.getApellidos();
+    String apellidoEsperado = "Porras Valverde";
+    assertEquals(apellidoEsperado, apellidoObtenido);
+
+    medPrueba.setGenero("Femenino");
+    String generoObtenido = medPrueba.getGenero();
+    String generoEsperado = "Femenino";
+    assertEquals(generoEsperado, generoObtenido);
+
+    medPrueba.setEspecialidad("Médico General");
+    String especialidadObtenida = medPrueba.getEspecialidad();
+    String especialidadEsperada = "Médico General";
+    assertEquals(especialidadEsperada, especialidadObtenida);
+
+    medPrueba.setTelefono(83745536);
+    int telefonoObtenido = medPrueba.getTelefono();
+    int telefonoEsperado = 83745536;
+    assertEquals(telefonoEsperado, telefonoObtenido);
+
+    medPrueba.setCorreo("sharon_porras@med.com");
+    String correoObtenido = medPrueba.getCorreo();
+    String correoEsperado = "sharon_porras@med.com";
+    assertEquals(correoEsperado, correoObtenido);
+  }
+
+  @Test
+  public void probarConsultarHorarios(){
+
+    //Consultar horarios muestra un mensaje tipo texto con los horarios 
+    Cita cita = new Cita();
+    
+    cita.mensaje = "En este mensaje se muestra en el metodo original un texto que especifica horarios";
+
+    String mensajeEsperado = "En este mensaje se muestra en el metodo original un texto que especifica horarios";
+    String mensajeObtenido = cita.mensaje;
+
+    assertEquals(mensajeEsperado, mensajeObtenido);
+    
+  }  
 }
