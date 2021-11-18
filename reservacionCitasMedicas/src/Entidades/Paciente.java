@@ -17,4 +17,8 @@ public class Paciente extends Persona{
     setCorreo(corr);
     siguiente = this;
   }
+  
+  public Paciente() {
+
+  }  
 }
