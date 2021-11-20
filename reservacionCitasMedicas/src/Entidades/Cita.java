@@ -105,6 +105,7 @@ public class Cita extends Medico implements Ingresable, Consultable, Reservable,
       corr = JOptionPane.showInputDialog(null, "Ingrese el correo electronico del paciente:");
 
       //se crea nuevo paciente
+
       Paciente nuevo = new Paciente(nomb, ape, ced, ed, gen, tel, corr); 
 
       nuevo.setNumeroCita(Integer.parseInt(JOptionPane.showInputDialog(null,
@@ -353,37 +354,30 @@ public class Cita extends Medico implements Ingresable, Consultable, Reservable,
 
   @Override
   public void cancelar() {
-   
-    if(cancelar == true){
 
-      JOptionPane.showMessageDialog(null,
-                   "La cita fue cancelada, por favor reinicia el proceso.",
-                   "No hay una cita registrada",3);
+    //Se reinician los datos de usuario
+    if(registrado == true){
+      
+      cita1.setNombre(null);
+      cita1.setApellidos(null);
+      cita1.setID(0);
+      cita1.setEdad(0);
+      cita1.setGenero(null); 
+      cita1.setTelefono(0);
+      cita1.setCorreo(null);
 
+      nomb = null;
+      
+      //Cancelar pasa a ser true 
+      cancelar = true;
+      //Registrado pasa a ser false y limita el acceso
+      registrado = false;
+      //reservado pasa a ser false y limita acceso
+      reservado = false;
+
+      JOptionPane.showMessageDialog(null, "La cita actual se ha cancelado", "Cancelar cita", 3);
     }else{
-
-      if(reservado == true){
-        JOptionPane.showMessageDialog(null, "Datos del paciente: \n"
-                                       +"-------------------------------------------------------------------------\n"
-                                       +"Nombre del paciente: "+cita1.getNombre()+" "+cita1.getApellidos()+"\n"
-                                       +"Cédula : "+cita1.getID()+"\n"
-                                       +"Edad :"+cita1.getEdad()+"\n"
-                                       +"Género :"+cita1.getGenero()+"\n"
-                                       +"Correo electrónico :"+cita1.getCorreo()+"\n"
-                                       +"Teléfono :"+cita1.getTelefono()+"\n"
-                                       +"-------------------------------------------------------------------------\n"
-                                       +"Información de la cita médica programada\n"
-                                       +"Número de identificación asignado a la cita: "+cita1.getNumeroCita()+"\n"
-                                       +"Área médica a la que asiste: "+eleccion.getEspecialidad()+"\n"
-                                       +"Médico que atiende: "+eleccion.getNombre()+" "+eleccion.getApellidos()+"\n"
-                                       +"Código médico: "+eleccion.getCodigoMedico()+ "\n"
-                                       +"Día y hora: El día "+diasDisponibles+ " en el horario de "+horasDisponibles+"\n"
-                                       +"-------------------------------------------------------------------------");
-                                  
-      }else{
-
-        JOptionPane.showMessageDialog(null, "Aún no se ha reservado la cita.", "No existe una cita creada", 3);
-      }
+      JOptionPane.showMessageDialog(null, "No se ha creado ninguna cita aun", " Nada que cancelar", 3);
     }
   }
 
